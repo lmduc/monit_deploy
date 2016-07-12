@@ -1,0 +1,11 @@
+set daemon 60
+
+set logfile /monit_deploy/logs.log
+
+set httpd port 2812 and
+  use address localhost
+  allow localhost
+  allow V3SxxB:jwnMMZj3Pljmz68cDQYugcMU909bRbgq
+
+check program clearDanglingImages path "/monit_deploy/clear_images.sh" every "0 22 * * *"
+  if status != 0 then alert
