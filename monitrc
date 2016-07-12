@@ -7,5 +7,5 @@ set httpd port 2812 and
   allow localhost
   allow V3SxxB:jwnMMZj3Pljmz68cDQYugcMU909bRbgq
 
-check program clearDanglingImages path "/monit_deploy/clear_images.sh" every "0 22 * * *" timeout 600 seconds
+check program clearDanglingImages path "/monit_deploy/clear_images.sh" timeout 600 seconds every "0 22 * * *"
   if status != 0 then alert
